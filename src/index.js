@@ -2,16 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { TaskProvider } from './context/TaskContext';
+import { ServiceProvider } from './services/ServiceContext';
+import { ControllerProvider } from './context/ControllerContext';
+import { AlertProvider } from './context/AlertContext';
+import { SpinnerProvider } from './context/SpinnerContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  
+  <TaskProvider>
+    <SpinnerProvider>
+      <AlertProvider>
+        <ServiceProvider>
+          <ControllerProvider>
+          
+            <App />
+          
+          </ControllerProvider>
+        </ServiceProvider>
+      </AlertProvider>
+    </SpinnerProvider>
+  </TaskProvider> 
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
