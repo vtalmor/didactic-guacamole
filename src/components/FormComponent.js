@@ -18,7 +18,7 @@ function FormComponent() {
     const crearTarea = () => {
 
         comprobar(newTask);
-        navigate("/", {replace:true});
+        navigate("/didactic-guacamole", {replace:true});
     
       
     }

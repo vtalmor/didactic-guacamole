@@ -8,7 +8,7 @@ function Button() {
     let navigate = useNavigate();
     function handleClick() {
         //console.log("toForm");
-        navigate("/form", { replace: true });
+        navigate("/didactic-guacamole/form", { replace: true });
     }  
     return (
         <Fab onClick={handleClick} color="primary">
